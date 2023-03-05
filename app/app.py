@@ -5,12 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    data = {
-        'titulo': 'index',
-    }
-    return render_template('index.html', data=data)
-
-# @app.errorhandler(404)
+    return render_template('index.html')
 
 
 def page_not_found(error):
