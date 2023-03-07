@@ -7,9 +7,17 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('auth/login.html')
+    """ print(request.method)
+        print(request.form['usuario'])
+        print(request.form['password'])"""
+    if request.method == 'POST':
+        print(request.form['usuario'])
+        print(request.form['password'])
+        return 'Ok'
+    else:
+        return render_template('auth/login.html')
 
 
 def page_not_found(error):
